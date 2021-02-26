@@ -1,9 +1,21 @@
 require('./bootstrap');
+window.Vue = require('vue').default;
 
 import Vue from 'vue'
-import VueRouter from 'vue-router'
 
+// VueRouter
+import VueRouter from 'vue-router'
 Vue.use(VueRouter)
+
+
+// BootstrapVue
+import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+Vue.use(BootstrapVue)
+
+
+
+
+
 
 import Catalog from './components/Catalog/catalogComponent.vue'
 import Molodo from './components/Molodozoni/MenComponent.vue'
@@ -17,13 +29,14 @@ const routes = [
 ]
 
 const router = new VueRouter({
-    mode: 'history',
+    // mode: 'history',
+    mode: 'abstract',
     routes,
 
     linkExactActiveClass: "active",
 })
 
-window.Vue = require('vue').default;
+
 
 
 Vue.component('head-component', require('./components/Header/Head.vue').default);

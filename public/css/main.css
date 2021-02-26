@@ -92,7 +92,7 @@ h1{	font-size:100%;}
 	width: 50px;
 	height: 30px;
 	float: right;
-	/*background: url(/img/Icon_door.png) left top  no-repeat;*/
+	background: url(/public/img/Icon_door.png) left top  no-repeat;
 }
 .exit:hover {cursor: pointer;}
 .Mmenu{
@@ -103,11 +103,10 @@ h1{	font-size:100%;}
 	overflow:auto;
 
 }
-nav li.router-link-active {
-    color:#d72784
-}
+
 .nav-link {
     padding: 0;
+    color:#8c8b8b;
 }
 .Mmenu a{
 	position:relative;
@@ -120,7 +119,7 @@ nav li.router-link-active {
 	transition:all 0.35s ease;
 }
 .Mmenu a:hover, .bt_act{color:#d72784;}
-.bt{color:#8c8b8b;}
+
 
 #tooltip{
     background:#529CC1;

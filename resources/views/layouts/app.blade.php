@@ -14,7 +14,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="/css/main.css" rel="stylesheet" type="text/css" />
     <link href="/css/notebl.css" rel="stylesheet" type="text/css" />
-    <script type="text/javascript" src="../js/spl2.js"></script>
+
+
 
 
 </head>
@@ -27,15 +28,17 @@
     <menu-component></menu-component>
     <div class="container">
         <div class="row">
-            <div class="col-xl-4">
+            <div class="col-xl-3">
 
                 @include('layouts.mynote_bl')
+
+
             </div>
 
        <div class="col-xl-8">
 
+           <router-view></router-view>
 
-<router-view></router-view>
 
 
 
@@ -46,8 +49,9 @@
     </div>
 
 
-    <script src="{{ asset('js/app.js') }}"></script>
+
 </div>
+<script src="{{ asset('js/app.js') }}"></script>
 
 
 </body>

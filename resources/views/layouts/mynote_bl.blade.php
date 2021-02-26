@@ -4,7 +4,7 @@
     <a href="/mynote" class="mynote">Мой блокнот</a>
     <a href="" class="spl_bt1"></a>
     <div class="spldv1">
-        <script type="text/javascript" src="../js/spl2.js"></script>
+
         <div class="spldv2">
             <!--===================== Список дел =====================-->
             <h3><a href="">список дел</a></h3>
@@ -26,7 +26,21 @@
             </p>
         </div>
 
+
    </div>
+
+
+
+
+    <head-component></head-component>
+
+
+
+{{--    @if(Auth::guard('admin')->check())--}}
+
+{{--        <h3><a href="{{route('admin.index')}}" style="color: red;">Управление каталогом</a></h3>--}}
+
+{{--    @endif--}}
 </div>
 
 
