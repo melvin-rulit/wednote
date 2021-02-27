@@ -6,6 +6,7 @@
 	font-family:'a_FuturicaLt';
 	/*float:left;*/
 	top:80px;
+    left: 260px;
 }
 .mynote, .budget h3{font-size:140%; color:#828080; font-family:'a_FuturicaLtBL';}
 

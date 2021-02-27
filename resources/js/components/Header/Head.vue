@@ -1,6 +1,6 @@
 <template>
 
-<div v-if="this.$route.path === '/catalog'">
+<div v-if="this.$route.path === '/catalog'" class="row">
     <b-table
         :items="group"
         :fields="fields"
@@ -22,8 +22,6 @@
 
 
 
-
-
 </template>
 
 <script>
@@ -33,7 +31,6 @@ export default {
         return {
 
             group: {},
-            lom: false,
 
             fields:[
                 // 'index',

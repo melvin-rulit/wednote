@@ -40,6 +40,7 @@ const router = new VueRouter({
 
 
 Vue.component('head-component', require('./components/Header/Head.vue').default);
+Vue.component('test-component', require('./components/TestComponent.vue').default);
 
 
 Vue.component('menu-component', require('./components/Menu/MenuComponent.vue').default);

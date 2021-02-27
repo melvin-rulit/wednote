@@ -24,23 +24,31 @@
 
                 @endif
             </p>
-        </div>
 
+            @if(Auth::guard('admin')->check())
+
+                <h3><a href="{{route('admin.index')}}" >Управление каталогом</a></h3>
+
+            @endif
+        </div>
 
    </div>
 
 
 
 
-    <head-component></head-component>
+    <!-- анимированные переходы между компонентами -->
+    <transition name="component-fade" mode="out-in">
+        <head-component></head-component>
+    </transition>
 
 
 
-{{--    @if(Auth::guard('admin')->check())--}}
+    <div class="budget">
+        <h3>БЮДЖЕТ</h3>
+        <div class="bdg_shkala"></div>
+    </div>
 
-{{--        <h3><a href="{{route('admin.index')}}" style="color: red;">Управление каталогом</a></h3>--}}
-
-{{--    @endif--}}
 </div>
 
 

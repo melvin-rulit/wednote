@@ -3,25 +3,21 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MyNoteController;
 use App\Http\Controllers\CatalogController;
+use App\Http\Controllers\PagesController;
 
 
 
-if (Route::currentRouteName('catalog')){
-    return view('welkome');
-};
+
 Route::get('/', function () {
     return view('layouts.app');
-});
+})->name('home');
 
 
 
 
-//Route::get('/', [App\Http\Controllers\PagesController::class, 'index'])->where('any', '.*')->name('home');
+//Route::get('/', [PagesController::class, 'index'])->where('any', '.*');
 
-// Верхнее меню MenuUpComponent.vue
-Route::group(['prefix' => 'Head'], function () {
 
-});
 
 
 // Левое меню и подменю mynote_bl.blade
