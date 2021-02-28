@@ -1,6 +1,6 @@
 <template>
 
-<div v-if="this.$route.path === '/catalog'" class="row">
+<div v-if="this.$route.path === '/catalog'">
     <b-table
         :items="group"
         :fields="fields"
@@ -8,12 +8,28 @@
         :small="true"
         :hover="true"
         :bordered="true"
-
+        selectable
+        select-mode="single"
+@row-selected="rowSelected"
+        selectedVariant="success"
         :fixed="true"
     >
 
-    </b-table>
 
+<!--        <template v-slot:cell(selected)="row">-->
+<!--            <b-btn @click="rowSelected(row.items)">-->
+<!--                Show details-->
+<!--            </b-btn>-->
+<!--        </template>-->
+<!--        <template v-slot:cell(selected)="rowSelected">-->
+<!--            <b-form-group>-->
+
+
+<!--                <button> <b-icon  icon="trash" @click="rowSelectedForUpdate(rowSelected)"></b-icon>  </button>-->
+
+<!--            </b-form-group>-->
+<!--        </template>-->
+    </b-table>
 
 </div>
 
@@ -31,6 +47,7 @@ export default {
         return {
 
             group: {},
+            selected: [],
 
             fields:[
                 // 'index',
@@ -57,6 +74,11 @@ export default {
         getGroup() {
             axios.get('api/v1/group')
                 .then(response => this.group = response.data)
+        },
+
+        rowSelected(items){
+            this.selected = items
+         axios.post('')
         }
     }
 }

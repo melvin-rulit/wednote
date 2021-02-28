@@ -8,9 +8,11 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 
-// BootstrapVue
-import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+// BootstrapVue  &  BootstrapVueIcons
+import { BootstrapVue, IconsPlugin, BootstrapVueIcons} from 'bootstrap-vue'
+
 Vue.use(BootstrapVue)
+
 
 
 
