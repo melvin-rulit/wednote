@@ -19,12 +19,16 @@ Vue.use(BootstrapVue)
 
 
 
-import Catalog from './components/Catalog/catalogComponent.vue'
+import Home from './components/Home/HomeComponent.vue'
+import getCatalog from './components/Catalog/catalogComponent.vue'
+import catalog from './components/Catalog/catalogIdComponent.vue'
 import Molodo from './components/Molodozoni/MenComponent.vue'
 import Joblist from './components/JobList/joblistComponent.vue'
 
 const routes = [
-    { path: '/catalog', component: Catalog },
+    { path: '/', name : 'home', component: Home },
+    { path: '/getCatalog', name : 'getCatalog', component: getCatalog },
+    { path: '/catalog', name : 'catalog', component: catalog, props: true   },
     { path: '/men', component: Molodo },
     { path: '/joblist', component: Joblist },
 
@@ -41,8 +45,8 @@ const router = new VueRouter({
 
 
 
-Vue.component('head-component', require('./components/Header/Head.vue').default);
-Vue.component('test-component', require('./components/TestComponent.vue').default);
+Vue.component('head-component', require('./components/Uknow/Head.vue').default);
+// Vue.component('test-component', require('./components/TestComponent.vue').default);
 
 
 Vue.component('menu-component', require('./components/Menu/MenuComponent.vue').default);

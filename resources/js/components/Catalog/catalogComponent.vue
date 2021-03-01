@@ -12,11 +12,15 @@
                     style="max-width: 20rem;"
                     class="mb-2"
                 >
-                    <b-card-text>
+                    <b-card-text text-tag="h2">
                         {{ datacatalog.name }}
                     </b-card-text>
+                    <router-link
+                        tag="a"
+                        class="button"
+                        :to="{ name: 'catalog', params: { userId: datacatalog.id}}">Пользователь
+                    </router-link>
 
-                    <b-button href="#" variant="primary">Смотреть</b-button>
                 </b-card>
             </div>
 
@@ -64,12 +68,15 @@ export default {
 
     methods: {
         getCatalog() {
-            axios.get('api/v1/catalog')
+            axios.get('api/v1/getCatalog')
                 .then(response => this.catalog = response.data)
         },
         getGroup() {
             axios.get('api/v1/group')
                 .then(response => this.group = response.data)
+        },
+        sendGroup(id){
+            alert(id);
         }
     }
 }

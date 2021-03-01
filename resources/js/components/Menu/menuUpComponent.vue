@@ -12,7 +12,7 @@
 
         <router-link to="/"  exact class="nav-link">главная</router-link>
         <router-link to="/paty" class="nav-link">подготовка праздника</router-link>
-        <router-link to="/catalog" class="nav-link">каталог</router-link>
+        <router-link to="/getCatalog" class="nav-link">каталог</router-link>
         <router-link to="/men" class="nav-link">молодожёны</router-link>
         <router-link to="/otchety" class="nav-link">отчёты</router-link>
         <router-link to="/news" class="nav-link">новости</router-link>

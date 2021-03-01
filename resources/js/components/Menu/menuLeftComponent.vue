@@ -1,22 +1,35 @@
 <template>
-<div>
+
+    <div v-if="this.$route.path === '/getCatalog'">
+        <b-table
+            :items="group"
+            :fields="fields"
+
+            :small="true"
+            :hover="true"
+            :bordered="true"
+            selectable
+            select-mode="single"
+            @row-selected="rowSelected"
+            selectedVariant="success"
+            :fixed="true"
+        >
 
 
+            <!--        <template v-slot:cell(selected)="row">-->
+            <!--            <b-btn @click="rowSelected(row.items)">-->
+            <!--                Show details-->
+            <!--            </b-btn>-->
+            <!--        </template>-->
+            <!--        <template v-slot:cell(selected)="rowSelected">-->
+            <!--            <b-form-group>-->
 
 
-    <div class="note">
-        <a href="/mynote" class="mynote">Мой блокнот</a>
-        <a href="" class="spl_bt1"></a>
-        <div class="spldv1">
+            <!--                <button> <b-icon  icon="trash" @click="rowSelectedForUpdate(rowSelected)"></b-icon>  </button>-->
 
-            <div class="spldv2">
-                <!--===================== Список дел =====================-->
-
-
-        <div class="budget">
-            <h3>БЮДЖЕТ</h3>
-            <div class="bdg_shkala"></div>
-        </div>
+            <!--            </b-form-group>-->
+            <!--        </template>-->
+        </b-table>
 
     </div>
 
@@ -24,9 +37,50 @@
 
 
 
-</div>
-</div>
-</div>
 
 </template>
+
+<script>
+export default {
+    data(){
+
+        return {
+
+            group: {},
+            selected: [],
+
+            fields:[
+                // 'index',
+                // {
+                //     key: 'id',
+                //     label: 'Индекс',
+                // },
+                {
+                    key: 'name',
+                    label: 'Список групп',
+                }
+            ],
+        }
+    },
+
+    mounted() {
+
+        this.getGroup()
+
+    },
+
+    methods: {
+
+        getGroup() {
+            axios.get('api/v1/group')
+                .then(response => this.group = response.data)
+        },
+
+        rowSelected(items){
+            this.selected = items
+            axios.post('')
+        }
+    }
+}
+</script>
 
